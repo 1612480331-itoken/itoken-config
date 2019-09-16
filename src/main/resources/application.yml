@@ -13,14 +13,14 @@ spring:
       label: master    #git分支
       server:
         git:
-          uri: https://github.com/1612480331/spring-cloud-config.git    #仓库地址
+          uri: https://github.com/1612480331-itoken/itoken-config.git    #仓库地址
           search-paths: respo #仓库中放配置的目录
           username: 1612480331
           password: dy262626
 
 server:
   port: 8888
-  eureka:
+eureka:
     client:
       serviceUrl:
         defaultZone: http://localhost:8761/eureka/
