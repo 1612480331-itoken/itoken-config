@@ -7,6 +7,23 @@ spring:
     admin:
       client:
         url: http://localhost:8084
+
+#服务检测客户端与服务端都要添加下面这一段，才有效果
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+  #zipkin需要的配置
+  metrics:
+    web:
+      server:
+        auto-time-requests: false
+
 server:
   port: 9411
 
@@ -14,9 +31,3 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
-
-management:
-  metrics:
-    web:
-      server:
-        auto-time-requests: false

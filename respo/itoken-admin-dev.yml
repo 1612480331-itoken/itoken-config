@@ -12,6 +12,7 @@ spring:
 server:
   port: 8084
 
+#服务检测客户端与服务端都要添加下面这一段，才有效果
 management:
   endpoint:
     health:
