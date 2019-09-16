@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: hello-spring-cloud-config
+  zipkin:
+    base-url: http://localhost:9411
+  #服务监控客户端
+  boot:
+    admin:
+      client:
+        url: http://localhost:8084
+  cloud:   #分布式配置中心，将配置文件保存到git远程仓库上,访问方式：http://ip:port/{application}/{profile}[/{label}]
+    config:
+      label: master    #git分支
+      server:
+        git:
+          uri: https://github.com/1612480331/spring-cloud-config.git    #仓库地址
+          search-paths: respo #仓库中放配置的目录
+          username: 1612480331
+          password: dy262626
+
+server:
+  port: 8888
+  eureka:
+    client:
+      serviceUrl:
+        defaultZone: http://localhost:8761/eureka/
