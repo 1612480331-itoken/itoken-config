@@ -26,7 +26,9 @@ eureka:
   instance:
     hostname: localhost
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    #表示是否将自己注册到eureka,因为要构建集群，需要将自己注册到集群，所以需要开启
+    registerWithEureka: true
+    #表示是否从eureka获取到注册信息，这里为集群，所以应该开启
+    fetchRegistry: true
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
