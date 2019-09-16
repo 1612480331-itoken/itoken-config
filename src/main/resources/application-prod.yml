@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: itoken-config
+  zipkin:
+    base-url: http://192.168.145.137:9411
+  #服务监控客户端
+  boot:
+    admin:
+      client:
+        url: http://192.168.145.137:8084
+  cloud:   #分布式配置中心，将配置文件保存到git远程仓库上,访问方式：http://ip:port/{application}/{profile}[/{label}]
+    config:
+      label: master    #git分支
+      server:
+        git:
+          uri: https://github.com/1612480331-itoken/itoken-config.git    #仓库地址
+          search-paths: respo #仓库中放配置的目录
+          username: 1612480331
+          password: dy262626
+
+#服务检测客户端与服务端都要添加下面这一段，才有效果
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+
+server:
+  port: 8888
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.145.137:8761/eureka/
