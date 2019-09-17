@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: itoken-service-admin
+  zipkin:
+    base-url: http://localhost:9411
+  #服务监控客户端
+  boot:
+    admin:
+      client:
+        url: http://localhost:8084
+  datasource:
+    druid:
+      url: jdbc:mysql://192.168.145.137:3306/itoken-service-admin
+      username: root
+      password: 123456
+      initial-size: 1
+      max-active: 20
+      driver-class-name: com.mysql.jdbc.Driver
+
+#服务检测客户端与服务端都要添加下面这一段，才有效果
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+server:
+  port: 8501
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
