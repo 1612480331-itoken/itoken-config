@@ -31,4 +31,4 @@ eureka:
     #表示是否从eureka获取到注册信息，这里为集群，所以应该开启
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/,http://${eureka.instance.hostname}:8861/eureka/
