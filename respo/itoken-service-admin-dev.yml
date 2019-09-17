@@ -15,9 +15,6 @@ spring:
       password: 123456
       initial-size: 1
       max-active: 20
-#mybatis主配置文件所在路劲
-mybatis:
-  config-location=classpath:/mybatis-config.xml
 
 #服务检测客户端与服务端都要添加下面这一段，才有效果
 management:
