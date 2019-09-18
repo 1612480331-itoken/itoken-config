@@ -10,7 +10,7 @@ spring:
         url: http://localhost:8084
   datasource:
     druid:
-      url: jdbc:mysql://192.168.145.137:3306/itoken-service-admin?serverTimezone=GMT%2B8
+      url: jdbc:mysql://192.168.145.128:3306/itoken-service-admin?serverTimezone=GMT%2B8
       username: root
       password: 123456
       initial-size: 1
