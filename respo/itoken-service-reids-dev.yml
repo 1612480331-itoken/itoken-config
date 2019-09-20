@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: itoken-service-redis
+  zipkin:
+    base-url: http://localhost:9411
+  #服务监控客户端
+  boot:
+    admin:
+      client:
+        url: http://localhost:8084
+  # redis配置
+  redis:
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        max-wait: -1ms
+        min-idle: 0
+    sentinel:
+      master: mymaster
+      nodes: 192.168.145.128:26379,192.168.145.128:26380,192.168.145.128:26381
+
+#服务检测客户端与服务端都要添加下面这一段，才有效果
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+server:
+  port: 8502
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
