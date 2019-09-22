@@ -29,6 +29,9 @@ management:
 server:
   port: 8501
 
+mybatis:
+  type-aliases-package: com.example.itokenserviceadmin.entity
+
 eureka:
   client:
     serviceUrl:
