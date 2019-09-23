@@ -10,7 +10,7 @@ spring:
         url: http://localhost:8084
   #thymeleaf配置
   thymeleaf:
-    cacche: false #开发时关闭缓存，否则看不到实时页面
+    cache: false #开发时关闭缓存，否则看不到实时页面
     mode: HTML5 #用严格的html
     encoding: UTF-8
     servlet:
