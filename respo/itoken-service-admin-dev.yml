@@ -8,8 +8,13 @@ spring:
     admin:
       client:
         url: http://localhost:8084
-#  datasource:
-#    druid:
+  datasource:
+    druid:
+        url: jdbc:mysql://localhost:3307/houses?serverTimezone=GMT%2B8
+        username: root
+        password: 1612480331
+        initial-size: 1
+        max-active: 20
 #      url: jdbc:mysql://192.168.145.128:3306/itoken-service-admin?serverTimezone=GMT%2B8
 #      username: root
 #      password: 123456
